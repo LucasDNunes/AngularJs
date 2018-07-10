@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="alurapic">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<meta name="viewport" content="width=device-width">
+	<title>Alurapic</title>
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script 
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+
+	<script src="js/lib/angular.min.js"></script>
+
+	<script src="js/materialize.js"></script>
+
+	<script src="js/lib/angular-animate.min.js" ></script>
+	<script src="js/lib/angular-route.min.js" ></script>
+	<script src="js/lib/angular-resource.min.js" ></script>
+
+	<script src="js/main.js"></script>
+	<script src="js/controllers/fotos-controller.js"></script>
+	<script src="js/controllers/foto-controller.js"></script>
+	<script src="js/controllers/grupos-controller.js"></script>
+	<script src="js/directives/minhas-diretivas.js" ></script>
+	
+	<script src="js/services/meus-servicos.js" ></script>
+
+</head>
+<body>
+	<div class="container">
+
+		<ng-view></ng-view>
+
+	</div> <!-- fim container -->
+	<script src="js/script.js"></script>
+</body>
+</html>

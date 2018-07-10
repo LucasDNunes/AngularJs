@@ -1,0 +1,33 @@
+<div class="pad">
+	<h1 class="center">Alurapic</h1>
+</div>
+
+<p ng-show="mensagem.length" class="card panel blue darken-2">{{mensagem}}</p>
+
+<div class="requiredow">
+	<div>
+		<a href="fotos/new" class="margin waves-effect waves-light btn-large indigo darken-4">Nova Foto</a>	
+	</div>
+	<div>
+		<nav>
+			<div class="nav-wrapper blue accent-4">
+				<form>
+					<div class="input-field">
+						<input id="search" type="search" placeholder="Filtro" required ng-model="filtro" ng-model-options="{debounce: 500}">
+						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
+				</form>
+			</div>
+		</nav>
+	</div>
+</div>
+
+<div class="row">
+	<meu-painel class="col s12 m4 l4 fade" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}" url="{{foto.url}}">
+		<!-- <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto> -->
+		<!-- <img class="responsive-img" src="{{foto.url}}"> -->
+		<a href="/fotos/edit/{{foto._id}}" class="btn waves-effect waves-light blue darken-4">Editar</a>
+		<meu-botao-perigo nome="Remover" acao=remover(foto)></meu-botao-perigo>
+	</meu-painel>
+</div>

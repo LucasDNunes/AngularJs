@@ -1,0 +1,57 @@
+<div class="center">
+	<h3>{{foto.titulo}}</h3>
+</div>
+
+<p ng-show="mensagem.length" class="card panel green accent-4">{{mensagem}}</p>
+
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+	<div class="col s6">
+		<div class="input-field">
+			<input ng-model="foto.titulo" placeholder="titulo" name="titulo" id="titulo" type="text" required ng-maxlength="20">
+			<label for="tituloI">Titulo</label>
+			<blockquote ng-show="formulario.$submitted && formulario.titulo.$error.required">
+				Título obrigatorio
+			</blockquote>
+			<blockquote ng-show="formulario.$submitted && formulario.titulo.$error.maxlength">
+				Maximo 20 caracteres
+			</blockquote>
+
+		</div>
+		<div class="input-field">
+			<input ng-model="foto.url" placeholder="URL" name="url" id="url" type="text" required>
+			<label for="url">Url da foto</label>
+			<blockquote ng-show="formulario.$submitted && formulario.url.$error.required">
+				Url obrigatoria
+			</blockquote>
+		</div>
+		<div class="input-field">
+			<textarea ng-model="foto.descricao" name="descricao" id="descricao" class="materialize-textarea"></textarea>
+			<label for="descricao">Descrição</label>
+		</div>
+
+		<div>
+
+			<label>Grupo</label>
+			<select name="grupo" class="browser-default" required ng-controller="GruposController" 
+			ng-model="foto.grupo" ng-options="grupo._id as (grupo.nome | uppercase) for grupo in grupos">
+				<option value="" disabled>Selecione o grupo</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+			<blockquote ng-show="formulario.$submitted && formulario.grupo.$error.required">
+				Grupo obrigatorio.
+			</blockquote>
+			
+		</div>
+			
+
+		<div>
+			<button type="submit" class="btn waves-effect waves-light" ng-disabled="formulario.$invalid">
+				Salvar
+			</button>
+			<a href="/" class="btn waves-effect waves-light">Voltar</a>
+		</div>
+	</div>
+	<minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+</form>
